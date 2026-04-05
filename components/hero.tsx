@@ -28,15 +28,14 @@ export function Hero() {
             style={{ animationDelay: '150ms' }}
           >
             <p className="text-lg text-muted-foreground">
-              honours computer engineering @ university of waterloo.
+              Honours Computer Engineering @ University of Waterloo.
             </p>
             <p className="text-lg text-muted-foreground">
-              learning, building and cheezing yur yur.
+              I love building things and staying busy.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              i format
-              exactly
-              like this.
+              Mentoring, bringing people together, and staying in tune with the latest jazz in tech! 
+              
             </p>
           </div>
         </div>
