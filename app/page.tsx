@@ -32,7 +32,7 @@ export default function Home() {
           <TabsNav activeTab={activeTab} onTabChange={setActiveTab} />
         </section>
 
-        <section className="pb-12" key={activeTab}>
+        <section className="pb-4" key={activeTab}>
           <ProjectGrid projects={getActiveProjects()} />
         </section>
 

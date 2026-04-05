@@ -5,7 +5,7 @@ import { FlatLay } from "./flat-lay";
 
 export function Hero() {
   return (
-    <section className="min-h-[85vh] lg:min-h-[78vh] flex items-start pt-16 lg:pt-20">
+    <section className="min-h-[70vh] lg:min-h-[67vh] flex items-start pt-16 lg:pt-20">
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10">
         {/* Left side - Text content */}
         <div className="flex flex-col justify-center">
