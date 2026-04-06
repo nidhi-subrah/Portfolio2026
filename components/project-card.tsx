@@ -32,7 +32,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       onMouseLeave={() => setIsHovering(false)}
       className="group cursor-pointer transition-transform duration-200 hover:-translate-y-0.5"
     >
-      <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-card mb-4">
+      <div className={`relative aspect-[16/10] overflow-hidden rounded-lg mb-4 ${project.title === "WATERLOO REALITY LABS" ? "bg-[#0C1726]" : "bg-card"}`}>
         {/* Subtle cursor-responsive glow */}
         {isHovering && (
           <div
