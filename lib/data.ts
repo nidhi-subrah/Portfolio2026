@@ -6,6 +6,7 @@ export interface Project {
   image: string;
   overview: string;
   techStack: string[];
+  companyWebsite?: string;
   github?: string;
   liveDemo?: string;
 }
@@ -15,30 +16,49 @@ export const workData: Project[] = [
     id: "company-1",
     title: "VIRTEK VISION INTERNATIONAL INC.",
     subtitle: "Full-Stack Software Developer Intern",
-    year: "Jan-Apr 2025",
+    year: "Jan-Apr 2026",
     image: "/Virtek_Vision.jpeg",
-    overview: "Worked on building scalable systems and implementing new features for the platform. Collaborated with cross-functional teams to deliver high-impact projects.",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "AWS"],
-    github: "https://github.com",
+    overview: `Built responsive React and TypeScript features for web app and mobile interfaces integrated with a laser-projection system, enabling FOD capture, inspection workflows and real-time desktop-to-web synchronization.
+
+  • Developed C#/.NET REST APIs for frontend-backend communication.
+
+  • Resolved <strong>75+</strong> Jira tasks & defects and used Bitbucket and Jenkins for CI/CD.
+
+  • Identified <strong>60+</strong> defects and built Python plus Playwright end-to-end automated tests to prevent regressions and improve system reliability.
+
+  • Presented product updates and gave live demos to multiple teams, helping communicate progress and gather feedback.`,
+    techStack: ["C#", ".NET", "Typescript", "React", "Python", "Jira", "Bitbucket", "Jenkins", "CI/CD"],
+    companyWebsite: "https://virtekvision.com/products/home?view=home",
   },
-  {
-    id: "company-2",
-    title: "WATERLOO REALITY LABS",
-    subtitle: "Software Developer, Part-time",
-    year: "Dec-Apr 2025",
-    image: "/Waterloo_Reality_Labs.gif",
-    overview: "Conducted research on machine learning applications and contributed to published papers. Developed prototypes and ran experiments.",
-    techStack: ["Python", "PyTorch", "TensorFlow", "Jupyter"],
-  },
+{
+  id: "company-2",
+  title: "WATERLOO REALITY LABS",
+  subtitle: "Software Developer, Part-time",
+  year: "Dec-Apr 2026",
+  image: "/Waterloo_Reality_Labs.gif",
+  overview: `Contributed as part of the <em>software team</em> for <strong>Universal Gestures</strong>, a project focused on building a Unity package for Meta Quest headsets that enhances hand-tracking gesture recognition for mixed reality applications. My contributions include:
+
+• Replaced binary gesture detection with a multi-class time-series classifier using PyTorch, enabling ranked outputs and improving debugging efficiency by <strong>40%</strong>.
+
+• Implemented a Conv1D model for hand-tracking sequences (1x17 tensors), outputting <strong>top-4 gesture confidences</strong> for Unity VR integration.
+
+• Refactored and optimized model-related code to improve efficiency, readability and maintainability across the gesture classification pipeline.`,
+  techStack: ["PyTorch", "TensorFlow", "Unity", "VR/XR"],
+  companyWebsite: "https://uwrealitylabs.com/",
+},
   {
     id: "company-3",
     title: "GAY LEA",
     subtitle: "AI & Data Analytics Intern",
-    year: "May-Aug 2024",
+    year: "May-Aug 2025",
     image: "/Gay_Lea.png",
-    overview: "Built user interfaces and improved user experience for web applications. Implemented responsive designs and accessibility features.",
-    techStack: ["React", "TypeScript", "Tailwind CSS", "Figma"],
-    liveDemo: "https://example.com",
+    overview: `•  Automated pricing approval workflows with Power Automate, reducing manual validation by <strong>60%</strong> and shortening approval turnaround from days to hours.
+
+    •  Built a Microsoft Fabric agent to centralize sales forecasts, purchase orders, and safety metrics data for <strong>200+ employees</strong>.
+
+    •  Developed and deployed a Power App integrated with Dataverse and SQL for real-time shortage tracking, improving supply chain visibility and helping resolve <strong>10+</strong>shortages per month.`,
+    techStack: ["T-SQL", "Dataverse", "Power BI","Power Automate", "Power Apps"],
+    companyWebsite: "https://www.gaylea.com/",
   },
 ];
 

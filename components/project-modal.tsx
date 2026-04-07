@@ -82,9 +82,10 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
               Overview
             </h3>
-            <p className="text-foreground/90 leading-relaxed">
-              {project.overview}
-            </p>
+            <p
+            className="text-foreground/90 leading-relaxed whitespace-pre-line"
+            dangerouslySetInnerHTML={{ __html: project.overview }}
+            />
           </div>
 
           {/* Tech Stack */}
