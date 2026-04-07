@@ -9,6 +9,7 @@ export interface Project {
   companyWebsite?: string;
   github?: string;
   liveDemo?: string;
+  keyFeatures?: string[];
 }
 
 export const workData: Project[] = [
@@ -65,20 +66,28 @@ export const workData: Project[] = [
 export const projectsData: Project[] = [
   {
     id: "project-1",
-    title: "PROJECT ONE",
-    subtitle: "ai-powered application",
-    year: "2025",
-    image: "/placeholder-project-1.jpg",
-    overview: "An innovative application leveraging AI to solve real-world problems. Built with modern technologies and best practices.",
-    techStack: ["Next.js", "AI SDK", "OpenAI", "Vercel"],
-    github: "https://github.com",
-    liveDemo: "https://example.com",
+    title: "NETWORKIFY",
+    subtitle: "Interactive Network Visualizer & Graph-Based Referral Path Finder",
+    year: "2026",
+    image: "networkify.jpg",
+    overview:
+    "Transforms networking connections into an interactive graph that helps users uncover the strongest referral paths to companies, recruiters and career opportunities.",
+    keyFeatures: [
+    "Finds the strongest referral path through first, second and third-degree connections.",
+    "Visualizes people, companies and relationships in an interactive network graph.",
+    "Supports recruiter-only filtering for faster and more targeted networking.",
+    "Merges multiple connection datasets to reveal hidden opportunities across expanded networks.",
+    "Generates personalized AI-powered coffee chat/intro messages for outreach."
+  ],
+  techStack: ["Three.js", "FastAPI", "Authlib", "Neo4j","Next.js", "React"],
+    github: "https://github.com/nidhi-subrah/HackCanada2026",
+    liveDemo: "https://www.youtube.com/watch?v=OFqqsYXrrZY",
   },
   {
     id: "project-2",
     title: "PROJECT TWO",
     subtitle: "mobile application",
-    year: "2024",
+    year: "2026",
     image: "/placeholder-project-2.jpg",
     overview: "A cross-platform mobile application with intuitive user experience and robust backend integration.",
     techStack: ["React Native", "Firebase", "Node.js"],
@@ -88,7 +97,7 @@ export const projectsData: Project[] = [
     id: "project-3",
     title: "PROJECT THREE",
     subtitle: "web platform",
-    year: "2024",
+    year: "2025",
     image: "/placeholder-project-3.jpg",
     overview: "A comprehensive web platform designed for collaboration and productivity. Features real-time updates and cloud integration.",
     techStack: ["Vue.js", "GraphQL", "PostgreSQL", "Docker"],
@@ -99,8 +108,28 @@ export const projectsData: Project[] = [
     id: "project-4",
     title: "PROJECT FOUR",
     subtitle: "hackathon project",
-    year: "2023",
+    year: "2025",
     image: "/placeholder-project-4.jpg",
+    overview: "Award-winning hackathon project that addresses sustainability challenges through technology innovation.",
+    techStack: ["Python", "TensorFlow", "React", "AWS"],
+    github: "https://github.com",
+  },
+    {
+    id: "project-5",
+    title: "PROJECT FIVE",
+    subtitle: "hackathon project",
+    year: "2025",
+    image: "/placeholder-project-5.jpg",
+    overview: "Award-winning hackathon project that addresses sustainability challenges through technology innovation.",
+    techStack: ["Python", "TensorFlow", "React", "AWS"],
+    github: "https://github.com",
+  },
+    {
+    id: "project-6",
+    title: "PROJECT SIX",
+    subtitle: "hackathon project",
+    year: "2024",
+    image: "/placeholder-project-6.jpg",
     overview: "Award-winning hackathon project that addresses sustainability challenges through technology innovation.",
     techStack: ["Python", "TensorFlow", "React", "AWS"],
     github: "https://github.com",
@@ -112,7 +141,7 @@ export const activitiesData: Project[] = [
     id: "activity-1",
     title: "HACKATHON NAME",
     subtitle: "organizer & participant",
-    year: "2024-2025",
+    year: "2025",
     image: "/placeholder-activity-1.jpg",
     overview: "Organized and participated in one of the largest student hackathons. Managed logistics, sponsorships, and mentorship programs.",
     techStack: ["Event Planning", "Leadership", "Community Building"],
@@ -121,7 +150,7 @@ export const activitiesData: Project[] = [
     id: "activity-2",
     title: "CLUB NAME",
     subtitle: "president",
-    year: "2024",
+    year: "2025",
     image: "/placeholder-activity-2.jpg",
     overview: "Led a student organization focused on technology and innovation. Organized workshops, speaker events, and networking sessions.",
     techStack: ["Leadership", "Public Speaking", "Team Management"],
@@ -130,7 +159,7 @@ export const activitiesData: Project[] = [
     id: "activity-3",
     title: "COMPETITION",
     subtitle: "finalist",
-    year: "2023",
+    year: "2024",
     image: "/placeholder-activity-3.jpg",
     overview: "Competed in a national competition and reached the finals. Developed innovative solutions under time constraints.",
     techStack: ["Problem Solving", "Presentation", "Teamwork"],
