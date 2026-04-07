@@ -129,6 +129,17 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
+                        {project.companyWebsite && (
+              <a
+                href={project.companyWebsite}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+              >
+                LEARN MORE
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
           </div>
         </div>
       </div>
