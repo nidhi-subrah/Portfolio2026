@@ -157,13 +157,18 @@ keyFeatures: [
   },
     {
     id: "project-6",
-    title: "PROJECT SIX",
-    subtitle: "hackathon project",
-    year: "2024",
-    image: "/placeholder-project-6.jpg",
-    overview: "Award-winning hackathon project that addresses sustainability challenges through technology innovation.",
-    techStack: ["Python", "TensorFlow", "React", "AWS"],
-    github: "https://github.com",
+    title: "PODORA",
+    subtitle: "Textbook-to-Podcast Converter",
+    year: "2025",
+    image: "Podcastify.png",
+    overview: "Built a web app that converts textbook files into summarized, natural-sounding podcasts in seconds and includes an interactive AI chatbot to help students ask questions and better understand the material.",
+    keyFeatures: [
+      "Developed a Vue.js and Flask app that converts PDF and DOCX textbooks into summarized podcast-style audio in under 4 seconds.",
+      "Used NLP with spaCy and NLTK to extract key content from study materials before generating audio with the Speechify API.",
+      "Built an interactive chatbot with the Voiceflow API that lets students ask questions and receive AI-driven explanations."
+    ],
+    techStack: ["Python", "SpaCy", "NLTK", "Voiceflow API", "Speechify API", "Vue.js", "Flask"],
+    github: "https://github.com/nidhi-subrah/Podcastify",
   },
 ];
 
