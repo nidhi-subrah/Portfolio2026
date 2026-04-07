@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import type { Project } from "@/lib/data";
 import { X, ExternalLink } from "lucide-react";
@@ -29,7 +30,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 
   if (!isOpen || !project) return null;
 
-  return (
+  return createPortal(
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={onClose}
@@ -83,11 +84,23 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               Overview
             </h3>
             <p
-            className="text-foreground/90 leading-relaxed whitespace-pre-line"
-            dangerouslySetInnerHTML={{ __html: project.overview }}
+              className="text-foreground/90 leading-relaxed whitespace-pre-line"
+              dangerouslySetInnerHTML={{ __html: project.overview }}
             />
           </div>
-
+          {/* Features */}
+{project.keyFeatures && project.keyFeatures.length > 0 && (
+  <div className="mb-6">
+    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+      Key Features
+    </h3>
+    <ul className="list-disc pl-5 space-y-2 text-foreground/90 leading-relaxed">
+      {project.keyFeatures.map((feature) => (
+        <li key={feature}>{feature}</li>
+      ))}
+    </ul>
+  </div>
+)}
           {/* Tech Stack */}
           <div className="mb-8">
             <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
@@ -129,7 +142,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}
-                        {project.companyWebsite && (
+            {project.companyWebsite && (
               <a
                 href={project.companyWebsite}
                 target="_blank"
@@ -143,6 +156,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }

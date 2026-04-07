@@ -48,6 +48,22 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       />
     )}
     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+    {project.title === "NETWORKIFY" && (
+    <div className="absolute top-3 left-3 z-20 rounded-xl bg-[#243246]/88 border border-amber-300/20 px-3 py-2 text-white shadow-lg backdrop-blur-sm">
+    <div className="flex items-center gap-2">
+      <span className="text-amber-300 text-sm">🏆</span>
+      <div>
+        <div className="text-[11px] font-semibold uppercase tracking-wide">
+          Finalist at HackCanada 2026
+        </div>
+        <div className="text-[11px] italic text-white/75">
+          Most Technically Advanced Project
+        </div>
+      </div>
+    </div>
+  </div>
+  )}
+
     <Image
       src={project.image}
       alt={project.title}
