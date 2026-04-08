@@ -5,6 +5,13 @@ import { createPortal } from "react-dom";
 import Image from "next/image";
 import type { Project } from "@/lib/data";
 import { X, ExternalLink } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -53,15 +60,41 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
         </button>
 
         {/* Project image */}
-        <div className="relative aspect-video w-full">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover rounded-t-xl"
-            sizes="(max-width: 768px) 100vw, 672px"
-          />
-        </div>
+{project.carouselImages && project.carouselImages.length > 1 ? (
+  <Carousel className="w-full">
+    <CarouselContent>
+      {project.carouselImages.map((image, index) => (
+        <CarouselItem key={index}>
+          <div className="relative aspect-video w-full">
+            <Image
+              src={image}
+              alt={`${project.title} - Image ${index + 1}`}
+              fill
+              className="object-cover rounded-t-xl"
+              sizes="(max-width: 768px) 100vw, 672px"
+            />
+          </div>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious className="left-2" />
+    <CarouselNext className="right-2" />
+  </Carousel>
+) : (
+  <div className="relative aspect-video w-full">
+    <Image
+      src={
+        project.carouselImages && project.carouselImages.length > 0
+          ? project.carouselImages[0]
+          : project.image
+      }
+      alt={project.title}
+      fill
+      className="object-cover rounded-t-xl"
+      sizes="(max-width: 768px) 100vw, 672px"
+    />
+  </div>
+)}
 
         {/* Content */}
         <div className="p-6 lg:p-8">
@@ -101,22 +134,35 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
     </ul>
   </div>
 )}
-          {/* Tech Stack */}
-          <div className="mb-8">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
-              Tools
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 text-sm bg-secondary rounded-md text-foreground/80"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+{project.awards && project.awards.length > 0 && (
+  <div className="mb-6">
+    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+      Honours & Awards
+    </h3>
+    <ul className="list-disc pl-5 space-y-2 text-foreground/90 leading-relaxed">
+      {project.awards.map((award) => (
+        <li key={award}>{award}</li>
+      ))}
+    </ul>
+  </div>
+)}
+          {project.techStack && project.techStack.length > 0 && (
+  <div className="mb-8">
+    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
+      Tech Stack
+    </h3>
+    <div className="flex flex-wrap gap-2">
+      {project.techStack.map((tech) => (
+        <span
+          key={tech}
+          className="px-3 py-1 text-sm bg-secondary rounded-md text-foreground/80"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+)}
 
           {/* Links */}
           <div className="flex flex-wrap gap-3">
@@ -150,6 +196,17 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
               >
                 LEARN MORE
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+            {project.youtube && (
+              <a
+                href={project.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+              >
+                MY YOUTUBE CHANNEL! 
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}

@@ -5,11 +5,14 @@ export interface Project {
   year: string;
   image: string;
   overview: string;
-  techStack: string[];
+  techStack?: string[];
   companyWebsite?: string;
   github?: string;
   liveDemo?: string;
   keyFeatures?: string[];
+  carouselImages?: string[];
+  youtube?: string;
+  awards?: string[];
 }
 
 export const workData: Project[] = [
@@ -175,12 +178,30 @@ keyFeatures: [
 export const activitiesData: Project[] = [
   {
     id: "activity-1",
-    title: "HACKATHON NAME",
-    subtitle: "organizer & participant",
-    year: "2025",
-    image: "/placeholder-activity-1.jpg",
-    overview: "Organized and participated in one of the largest student hackathons. Managed logistics, sponsorships, and mentorship programs.",
-    techStack: ["Event Planning", "Leadership", "Community Building"],
+    title: "SINGING + RECORDING MUSIC",
+    subtitle: "Vocalist • Performer • Recording Artist",
+    year: "2011-Present",
+    image: "/yt.png",
+    carouselImages: [
+    "/singing-5.png",
+    "/singing-1.jpeg",
+    "/singing-2.jpeg",
+    "/singing-3.jpeg",
+    "/singing-6.png",
+    "/singing-4.png",
+  ],
+    overview: "I began singing at the ripe age of 5, performing at the age of 8 and recording music professionally at the age of 10. Since then, I have released two Indian classical albums, performed across Carnatic, Hindustani and Western styles and sung in languages including Kannada, Malayalam, Tamil, Tulu, Konkani, Telugu, Marathi, Hindi, English, French, and Italian. I also share my music on YouTube, where my channel has grown to 4.23K subscribers with videos averaging 500K views.",
+    awards: [
+  "MusicFest Canada, Nationals - Jazz Band Solo Vocalist Honour Award",
+  "'KHNA Super Singer' Senior Title Winner",
+  "Flowers TV USA 'Singing Sensation' and Runner Up",
+  "2X North America Vishwa Kannada Association (NAVIKA) Teen Idol",
+  "2X Winner, Bhavageethe Competition conducted by Raju Ananthaswamy Trust",
+  "'Panorama India' Idol Runner Up",
+  "2.6M+ total views on YouTube Channel",
+],
+  techStack: [],
+    youtube: "https://www.youtube.com/@NidhiSubrahmanya",
   },
   {
     id: "activity-2",
