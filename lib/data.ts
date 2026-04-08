@@ -179,9 +179,9 @@ export const activitiesData: Project[] = [
   {
     id: "activity-1",
     title: "SINGING + RECORDING MUSIC",
-    subtitle: "----",
+    subtitle: "Vocalist • Performer • Recording Artist",
     year: "2011-Present",
-    image: "/youtube.png",
+    image: "/yt.png",
     carouselImages: [
     "/singing-5.png",
     "/singing-1.jpeg",
@@ -190,7 +190,7 @@ export const activitiesData: Project[] = [
     "/singing-6.png",
     "/singing-4.png",
   ],
-    overview: "I began singing at the ripe age of 5, performing at the age of 8 and recording music professionally at the age of 10. Since then, I have released two Indian classical albums, performed across Carnatic, Hindustani, and Western styles and sung in languages including Kannada, Malayalam, Tamil, Tulu, Konkani, Telugu, Marathi, Hindi, English, French, and Italian. I also share my music on YouTube, where my channel has grown to 4.23K subscribers and my videos average over 500K views.",
+    overview: "I began singing at the ripe age of 5, performing at the age of 8 and recording music professionally at the age of 10. Since then, I have released two Indian classical albums, performed across Carnatic, Hindustani and Western styles and sung in languages including Kannada, Malayalam, Tamil, Tulu, Konkani, Telugu, Marathi, Hindi, English, French, and Italian. I also share my music on YouTube, where my channel has grown to 4.23K subscribers with videos averaging 500K views.",
     awards: [
   "MusicFest Canada, Nationals - Jazz Band Solo Vocalist Honour Award",
   "'KHNA Super Singer' Senior Title Winner",
