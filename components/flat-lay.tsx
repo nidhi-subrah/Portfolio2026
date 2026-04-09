@@ -51,7 +51,7 @@ export function FlatLay() {
 
       {/* Leica Camera - top left anchor */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/camera-UVqyCwrUQ2SJTkNQZRXpWsuPK5lOCa.png"
+        src="/camera.png"
         alt="Vintage Leica camera"
         size="lg"
         className="top-2 left-8 lg:left-12"
@@ -60,7 +60,7 @@ export function FlatLay() {
 
       {/* Headphones - top right anchor */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/headphones-55d85wYJMlnFOeLkZYVrUP9JTVbG3d.png"
+        src="headphones.png"
         alt="Black headphones"
         size="lg"
         className="top-0 right-12 lg:right-16"
@@ -69,7 +69,7 @@ export function FlatLay() {
 
       {/* Vinyl Record - center-left anchor */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cd-mRldbshT4UJu7wBkAJcbvb32zgXE89.png"
+        src="cd.png"
         alt="Vinyl record"
         size="xl"
         className="top-20 left-0 lg:left-4"
@@ -78,7 +78,7 @@ export function FlatLay() {
 
       {/* Brain - right side anchor */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/brain-AD67C1b2TOD7DWnO0LiQrLCQhzPtEt.png"
+        src="brain.png"
         alt="Tech brain illustration"
         size="lg"
         className="top-24 right-4 lg:right-8"
@@ -87,7 +87,7 @@ export function FlatLay() {
 
       {/* NIDHI - Central focal sticker (between cards and brain) */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nidhi-ltrRvxPfdXT0WiFtOxJaNQZ7kdQ7RD.png"
+        src="nidhi.png"
         alt="Nidhi"
         size="xl"
         className="top-32 right-36 lg:top-30 lg:right-41"
@@ -98,7 +98,7 @@ export function FlatLay() {
 
       {/* Butterfly - top center */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/butterfly-dDm6W4OQMFnku4FTK31GUdwH05uEQh.png"
+        src="butterfly.png"
         alt="Vintage butterfly"
         size="md"
         className="top-8 left-28 lg:left-36"
@@ -107,16 +107,16 @@ export function FlatLay() {
 
       {/* Electric Guitar - bottom right */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/electric%20guitar-dLEhkeuPSB0jaQJsPbwYOwLPGs5fHl.png"
+        src="electric-guitar.png"
         alt="Electric guitar"
         size="lg"
-        className="bottom-8 right-0 lg:right-4"
+        className="bottom-10 right-0 lg:right-4"
         style={{ transform: 'rotate(25deg)', zIndex: 7 }}
       />
 
       {/* Bharatanatyam Dancer - bottom left */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dance-euCx3kv8xQiC50aFKkUcftXx2NL8Pk.png"
+        src="dance.png"
         alt="Classical dancer"
         size="lg"
         className="bottom-4 left-16 lg:left-24"
@@ -125,7 +125,7 @@ export function FlatLay() {
 
       {/* Playing Cards - center */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/cards-8OX4rnBI6QiLSw4WanYQBqTdbNvv0Q.png"
+        src="cards.png"
         alt="Playing cards"
         size="md"
         className="top-44 left-32 lg:left-40"
@@ -136,7 +136,7 @@ export function FlatLay() {
 
       {/* Pink Flower - near camera */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/flower-x7LVG2biwhTMHefKnss95pHX627TyB.png"
+        src="flower.png"
         alt="Pink flower"
         size="sm"
         className="top-16 left-24 lg:left-32"
@@ -145,7 +145,7 @@ export function FlatLay() {
 
       {/* Converse Badge - near headphones */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/converse-4R0zRMLckRWS0pQkbTSn3DmMdUVjWU.png"
+        src="converse.png"
         alt="Converse All Star badge"
         size="sm"
         className="top-20 right-8 lg:right-12"
@@ -154,36 +154,36 @@ export function FlatLay() {
 
       {/* 8-Balls - bottom center */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/8ball-uzoNSY2ulTo67rD9v15gUHuCtfV82y.png"
+        src="8ball.png"
         alt="8-balls"
         size="md"
         className="bottom-16 left-4 lg:left-8"
         style={{ transform: 'rotate(8deg)', zIndex: 4 }}
       />
 
-      {/* Hair with Flowers - right side */}
+      {/* Skates - right side */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hair%20flowers-VVIsiTv2SyNzw2tDFD6bE7zg3fJnjE.png"
-        alt="Hair with flowers"
+        src="skates1.png"
+        alt="Skates"
         size="md"
-        className="bottom-0 right-20 lg:right-10"
-        style={{ transform: 'rotate(-6deg)', zIndex: 3 }}
+        className="bottom-0 right-24 lg:right-4"
+        style={{ transform: 'rotate(-22deg)', zIndex: 3 }}
       />
 
       {/* NEW STICKERS - filling in gaps */}
 
       {/* Paint Palette - lower right area, near guitar */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/paint-ik6qcQcce0r7NyMXRBGgOfNU8ok6tZ.png"
+        src="paint.png"
         alt="Artist paint palette"
         size="md"
-        className="bottom-0 right-24 lg:right-32"
-        style={{ transform: 'rotate(-15deg)', zIndex: 2 }}
+        className="bottom-0 right-20 lg:right-29"
+        style={{ transform: 'rotate(-16deg)', zIndex: 2 }}
       />
 
       {/* Fingerprint Heart - small accent near hair flowers */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/heart-PBoNKIsyQ8ObhAcOfi3yJqsy9oHl0D.png"
+        src="heart.png"
         alt="Fingerprint heart"
         size="sm"
         className="bottom-36 right-8 lg:right-10"
@@ -192,7 +192,7 @@ export function FlatLay() {
 
       {/* Chrome Star - small sparkle accent near brain */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/star-6YZBrDI1eDhlejCUE5YCUaNxC3rzjL.png"
+        src="star.png"
         alt="Chrome star"
         size="sm"
         className="top-50 right-0 lg:right-105"
@@ -201,7 +201,7 @@ export function FlatLay() {
 
       {/* Hopes & Dreams - bottom center-right, fills gap */}
       <Sticker
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hopesdreams-2NqqFP2WsCXijcaEj6JpmfTNGfNF38.png"
+        src="hopesdreams.png"
         alt="Hopes and Dreams text"
         size="lg"
         className="bottom-20 right-46 lg:right-18"

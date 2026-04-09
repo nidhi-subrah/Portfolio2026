@@ -1,7 +1,11 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import { SocialLinks } from "./social-links";
-import { FlatLay } from "./flat-lay";
+
+const FlatLay = dynamic(() => import('./flat-lay').then((mod) => mod.FlatLay), {
+  ssr: false,
+});
 
 export function Hero() {
   return (

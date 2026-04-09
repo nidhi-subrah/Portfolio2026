@@ -1,11 +1,16 @@
 "use client";
 
+import dynamic from 'next/dynamic';
 import { useState } from "react";
 import { Hero } from "@/components/hero";
-import { TabsNav } from "@/components/tabs-nav";
 import { ProjectGrid } from "@/components/project-grid";
 import { Footer } from "@/components/footer";
 import { workData, projectsData, activitiesData } from "@/lib/data";
+
+const TabsNav = dynamic(
+  () => import('@/components/tabs-nav').then((mod) => mod.TabsNav),
+  { ssr: false }
+);
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("work");

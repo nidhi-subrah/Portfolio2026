@@ -2,7 +2,7 @@
 
 export function Footer() {
   return (
-    <footer className="py-12 mt-8 border-t border-border/50">
+    <footer className="py-10 mt-6 border-t border-border/50">
       <div className="text-center space-y-3">
         
         <p className="text-sm text-muted-foreground">

@@ -8,9 +8,9 @@ interface TabsNavProps {
 }
 
 const tabs = [
-  { id: "work", label: "work" },
-  { id: "projects", label: "projects" },
-  { id: "activities", label: "activities" },
+  { id: "work", label: "Work" },
+  { id: "projects", label: "Projects" },
+  { id: "activities", label: "Activities" },
 ];
 
 export function TabsNav({ activeTab, onTabChange }: TabsNavProps) {

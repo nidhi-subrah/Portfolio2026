@@ -60,7 +60,7 @@ export const workData: Project[] = [
 
     •  Built a Microsoft Fabric agent to centralize sales forecasts, purchase orders, and safety metrics data for <strong>200+ employees</strong>.
 
-    •  Developed and deployed a Power App integrated with Dataverse and SQL for real-time shortage tracking, improving supply chain visibility and helping resolve <strong>10+</strong>shortages per month.`,
+    •  Developed and deployed a Power App integrated with Dataverse and SQL for real-time shortage tracking, improving supply chain visibility and helping resolve <strong>10+</strong> product shortages per month.`,
     techStack: ["T-SQL", "Dataverse", "Power BI","Power Automate", "Power Apps"],
     companyWebsite: "https://www.gaylea.com/",
   },
