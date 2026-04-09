@@ -294,22 +294,22 @@ export const activitiesData: Project[] = [
 export const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com",
+    url: "https://github.com/nidhi-subrah",
     icon: "github",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com",
+    url: "https://www.linkedin.com/in/nidhi-subrahmanya/",
     icon: "linkedin",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com",
-    icon: "twitter",
+    name: "Devpost",
+    url: "https://devpost.com/nidhisubrahmanya06?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav",
+    icon: "devpost",
   },
   {
     name: "Email",
-    url: "mailto:hello@example.com",
+    url: "mailto:n2subrah@uwaterloo.ca",
     icon: "email",
   },
 ];
