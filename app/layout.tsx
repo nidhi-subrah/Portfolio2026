@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Nidhi Subrahmanya',
-  description: 'Personal portfolio of Nidhi Subrahmanya',
+  description: 'Nidhi Subrahmanya Portfolio',
   generator: 'v0.app',
 }
 
