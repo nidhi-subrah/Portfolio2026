@@ -18,10 +18,10 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function TwitterIcon({ className }: { className?: string }) {
+function DevpostIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 1.5c-5.799 0-10.5 4.701-10.5 10.5S6.201 22.5 12 22.5s10.5-4.701 10.5-10.5S17.799 1.5 12 1.5zm0 3c.828 0 1.5.672 1.5 1.5a1.5 1.5 0 1 1-3 0c0-.828.672-1.5 1.5-1.5zm-3 3h6a1.5 1.5 0 0 1 0 3h-6a1.5 1.5 0 0 1 0-3zm0 4.5h6a1.5 1.5 0 0 1 0 3h-6a1.5 1.5 0 0 1 0-3z"/>
     </svg>
   );
 }
@@ -38,7 +38,7 @@ function EmailIcon({ className }: { className?: string }) {
 const iconMap: Record<string, React.FC<{ className?: string }>> = {
   github: GithubIcon,
   linkedin: LinkedInIcon,
-  twitter: TwitterIcon,
+  devpost: DevpostIcon,
   email: EmailIcon,
 };
 

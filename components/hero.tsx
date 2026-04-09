@@ -38,7 +38,7 @@ export function Hero() {
               I love building things and staying busy.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              Mentoring, building connections, and staying in tune with the latest tech! 
+              Mentoring, fostering connections, and staying in tune with the latest tech! 
               
             </p>
           </div>
