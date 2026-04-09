@@ -207,21 +207,21 @@ export const activitiesData: Project[] = [
   {
     id: "activity-2",
     title: "MENTORING",
-    subtitle: "Waterloo WiCs Technovation + Peer Tutor",
+    subtitle: "Waterloo WiCs Technovation • Peer Tutor",
     year: "2020-Present",
     image: "/wics_uw_logo.png",
     carouselImages: [
     "/wics_uw_logo.png",
     "/Technovation-Girls-Canada.png",
   ],
-    overview: "I enjoy mentoring students in math and science since freshman year of high school, helping them turn confusion into confidence! Now, through the University of Waterloo Women in Computer Science (WiCS) Technovation Girls program, I support teams in building thoughtful, polished technical projects from idea to execution.",
+    overview: " I’ve enjoyed mentoring students in math and science since freshman year of high school, helping them turn confusion into confidence! Now, through the University of Waterloo Women in Computer Science (WiCS) Technovation Girls program, I support teams in building thoughtful, polished technical projects from idea to execution.",
     techStack: [],
     companyWebsite: "https://uwaterloo.ca/women-in-computer-science/youth-programs/technovation",
   },
   {
     id: "activity-3",
     title: "PUBLIC SPEAKING",
-    subtitle: "Concours d'art Oratoire, Toastmasters International",
+    subtitle: "Concours d'art Oratoire • Toastmasters International",
     year: "2015-Present",
     image: "/public-speaking.jpeg",
     overview: "I first stepped into public speaking as a shy kid looking for confidence, and it quickly became one of the most defining parts of my growth. In middle school, I competed in French prepared and impromptu speech, advancing to regionals and then placing first among 15+ students to reach the provincial finals with my speech, <em>Le Pouvoir d’un Sourire ~ The Power of a Smile </em>. In high school, I continued that journey through the Toastmasters International Youth Leadership Program, completing two terms and serving as President in 2023. Safe to say, I really do love talking to people now!",
@@ -232,8 +232,8 @@ export const activitiesData: Project[] = [
   {
     id: "activity-4",
     title: "DANCE",
-    subtitle: "Bharatanatyam + Bollywood + Contemporary",
-    year: "2015-Present",
+    subtitle: "Bharatanatyam • Bollywood • Contemporary",
+    year: "2010-Present",
     image: "/dance-6.png",
     carouselImages:[
     "/dance-6.png",
@@ -241,7 +241,7 @@ export const activitiesData: Project[] = [
     "/dance-1.png",
     "/dance-4.png",
     ],
-    overview: "I’ve been involved in winter sports since I was six, starting with skating lessons alongside swimming. Over the years, that grew into a real love for the season, and skiing with friends and family is still one of my favorite things to do.",
+    overview: "Some of my earliest memories are tied to dance. I began learning Bharatanatyam at the age of 4, then Kathak and Bollywood at 5, and over the years I’ve performed and competed with dance groups at events like the Toronto Carassauga Festival of Events. What I love most about dance is that it has kept me rooted in culture while still leaving room to explore, experiment and have fun with a variety of dance styles and cultures!",
     techStack: [],
   },
   {
@@ -249,10 +249,10 @@ export const activitiesData: Project[] = [
     title: "INSTRUMENTS",
     subtitle: "9 Instruments and counting!",
     year: "2010-Present",
-    image: "/music.jpeg",
+    image: "/singing-1.jpeg",
     carouselImages:[
-    "/music.jpeg",
     "/singing-1.jpeg",
+    "/music.jpeg",
     "/violin-1.jpeg",
     "/violin-2.jpeg",
     "/piano-2.png",
@@ -261,11 +261,12 @@ export const activitiesData: Project[] = [
     ],
     overview: "Alongside singing, music has always been a huge part of my life. I have been involved in band since high school, mainly playing guitar and bass, and outside of school I take lessons in violin, piano and Indian instruments such as harmonium and tabla. Over time, I’ve learned to play a total of nine instruments: guitar, bass, piano, violin, ukelele, recorder, harmonium, tabla and the banjo! Whenever I have some free time, I try to pick up a new instrument...",
     techStack: [],
+    companyWebsite: "https://www.rcmusic.com/",
   },
   {
     id: "activity-6",
     title: "WINTER SPORTS",
-    subtitle: "Skating + Skiing",
+    subtitle: "Skating • Skiing",
     year: "2015-Present",
     image: "/skating.jpeg",
     carouselImages:[
@@ -278,7 +279,7 @@ export const activitiesData: Project[] = [
   {
     id: "activity-7",
     title: "VISUAL ARTS",
-    subtitle: "Painting & Sketching",
+    subtitle: "Painting • Sketching",
     year: "2012-Present",
     image: "/visual-arts2.jpeg",
     carouselImages:[
