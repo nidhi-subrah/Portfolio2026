@@ -257,7 +257,6 @@ export const activitiesData: Project[] = [
     "/violin-2.jpeg",
     "/piano-2.png",
     "/piano-1.png",
-    "little-nidhi-dance.mp4"
     ],
     overview: "Alongside singing, music has always been a huge part of my life. I have been involved in band since high school, mainly playing guitar and bass, and outside of school I take lessons in violin, piano and Indian instruments such as harmonium and tabla. Over time, I’ve learned to play a total of nine instruments: guitar, bass, piano, violin, ukelele, recorder, harmonium, tabla and the banjo! Whenever I have some free time, I try to pick up a new instrument...",
     techStack: [],
