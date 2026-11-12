@@ -42,9 +42,11 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
   email: EmailIcon,
 };
 
-export function SocialLinks() {
+export function SocialLinks({ size = "md" }: { size?: "sm" | "md" }) {
+  const box = size === "sm" ? "w-9 h-9" : "w-11 h-11";
+  const icon = size === "sm" ? "w-4 h-4" : "w-5 h-5";
   return (
-    <div className="flex items-center gap-5">
+    <div className="flex items-center gap-3">
       {socialLinks.map((link, index) => {
         const Icon = iconMap[link.icon];
         return (
@@ -53,13 +55,13 @@ export function SocialLinks() {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/80 hover:text-foreground transition-colors duration-200"
+            className={`${box} grid place-items-center rounded-full border border-border bg-foreground/[0.03] text-foreground/80 transition-all duration-300 hover:text-accent-foreground hover:border-transparent hover:bg-accent hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-6px_var(--glow)]`}
             style={{
               animationDelay: `${400 + index * 80}ms`,
             }}
             aria-label={link.name}
           >
-            <Icon className="w-6 h-6" />
+            <Icon className={icon} />
           </a>
         );
       })}

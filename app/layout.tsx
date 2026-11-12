@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Geist, Geist_Mono, Playfair_Display } from 'next/font/google'
+import { Geist, Geist_Mono, Playfair_Display, Caveat, Fraunces } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -18,6 +18,17 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 });
 
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: '--font-fraunces',
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: '--font-caveat',
+});
+
 export const metadata: Metadata = {
   title: 'Nidhi Subrahmanya',
   description: 'Nidhi Subrahmanya Portfolio',
@@ -25,7 +36,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0d0d0d',
+  themeColor: '#1b1513',
 }
 
 export default function RootLayout({
@@ -34,8 +45,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${geist.variable} ${geistMono.variable} ${playfair.variable} font-sans antialiased`}>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${playfair.variable} ${caveat.variable} ${fraunces.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

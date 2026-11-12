@@ -3,6 +3,9 @@ export interface Project {
   title: string;
   subtitle: string;
   year: string;
+  location?: string;
+  /** Washi tape colour on the card; defaults to a rotating colour. */
+  tape?: "red" | "white" | "yellow" | "pink";
   image: string;
   overview: string;
   techStack?: string[];
@@ -16,6 +19,32 @@ export interface Project {
 }
 
 export const workData: Project[] = [
+  {
+    id: "company-cvrd",
+    title: "CVRD HEALTH",
+    subtitle: "Software Engineering Associate Intern",
+    year: "Sep-Dec 2026",
+    location: "Miami, FL",
+    tape: "white",
+    image: "/CVRD_Health.png",
+    overview: `•  Developed full-stack features using PHP, Laravel, React Native, MySQL, Docker and AWS across CVRD Health’s <strong>benefits administration platform</strong>, while modernizing UI/UX with Figma and MUI.
+
+  •  Built a <strong>two-stage pre-enrollment questionnaire</strong> across shopping and checkout, implementing eligibility logic, dependent-specific workflows, validation and per-enrollment data persistence.`,
+    techStack: ["PHP", "Laravel", "React Native", "MySQL", "Docker", "AWS", "Figma", "MUI"],
+  },
+  {
+    id: "company-watai",
+    title: "WAT.AI",
+    subtitle: "AI Software Engineer, Contract Part-time",
+    year: "Sep-Dec 2026",
+    location: "Remote",
+    tape: "yellow",
+    image: "/WAT_ai.jpg",
+    overview: `•  Designed RESTful APIs and AWS infrastructure using DynamoDB and S3 for scalable, secure <strong>English–Rohingya</strong> vocabulary retrieval and translation.
+
+  •  Architected database schemas and ML integration workflows for vocabulary, speech recognition and pronunciation assessment to support <strong>Rohingya newcomers</strong>.`,
+    techStack: ["Python", "SQL", "FastAPI", "React.js", "PyTorch", "Hugging Face Transformers", "REST APIs", "AWS", "DynamoDB", "S3", "Speech Recognition", "ML Integration"],
+  },
   {
     id: "company-1",
     title: "VIRTEK VISION INTERNATIONAL INC.",
@@ -37,6 +66,7 @@ export const workData: Project[] = [
 {
   id: "company-2",
   title: "WATERLOO REALITY LABS",
+  tape: "yellow",
   subtitle: "Software Developer, Part-time",
   year: "Dec-Apr 2026",
   image: "/Waterloo_Reality_Labs.gif",
@@ -53,6 +83,7 @@ export const workData: Project[] = [
   {
     id: "company-3",
     title: "GAY LEA",
+    tape: "red",
     subtitle: "AI & Data Analytics Intern",
     year: "May-Aug 2025",
     image: "/Gay_Lea.png",

@@ -43,17 +43,17 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
       onClick={onClose}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200" />
+      <div className="absolute inset-0 bg-[var(--scrim)] backdrop-blur-md animate-in fade-in duration-200" />
       
       {/* Modal */}
       <div
-        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-popover rounded-xl border border-border shadow-2xl animate-in fade-in zoom-in-95 duration-200"
+        className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-popover rounded-3xl border border-border shadow-[0_40px_120px_-30px_var(--glow-soft)] animate-in fade-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/80 backdrop-blur-sm text-muted-foreground hover:text-foreground transition-colors"
+          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/70 border border-border backdrop-blur-md text-muted-foreground hover:text-foreground hover:rotate-90 transition-all duration-300"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -70,7 +70,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               src={image}
               alt={`${project.title} - Image ${index + 1}`}
               fill
-              className="object-cover rounded-t-xl"
+              className="object-cover rounded-t-3xl"
               sizes="(max-width: 768px) 100vw, 672px"
             />
           </div>
@@ -90,7 +90,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
       }
       alt={project.title}
       fill
-      className="object-cover rounded-t-xl"
+      className="object-cover rounded-t-3xl"
       sizes="(max-width: 768px) 100vw, 672px"
     />
   </div>
@@ -101,33 +101,36 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-6">
             <div>
-              <h2 className="text-2xl font-bold tracking-wide mb-1">
+              <h2 className="font-display text-2xl font-medium tracking-wide mb-1">
                 {project.title}
               </h2>
-              <p className="text-muted-foreground">{project.subtitle}</p>
+              <p className="font-display text-muted-foreground">{project.subtitle}</p>
+              {project.location && (
+                <p className="text-sm text-muted-foreground/80 mt-1">{project.location}</p>
+              )}
             </div>
-            <span className="px-3 py-1 text-sm bg-secondary rounded-full text-muted-foreground shrink-0">
+            <span className="px-3 py-1 text-xs font-mono border border-border bg-foreground/[0.03] rounded-full text-muted-foreground shrink-0 whitespace-nowrap">
               {project.year}
             </span>
           </div>
 
           {/* Overview */}
           <div className="mb-6">
-            <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+            <h3 className="text-xs font-medium text-accent uppercase tracking-[0.2em] mb-2">
               Overview
             </h3>
             <p
-              className="text-foreground/90 leading-relaxed whitespace-pre-line"
+              className="font-display text-base md:text-lg text-muted-foreground leading-relaxed whitespace-pre-line"
               dangerouslySetInnerHTML={{ __html: project.overview }}
             />
           </div>
           {/* Features */}
 {project.keyFeatures && project.keyFeatures.length > 0 && (
   <div className="mb-6">
-    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+    <h3 className="text-xs font-medium text-accent uppercase tracking-[0.2em] mb-2">
       Key Features
     </h3>
-    <ul className="list-disc pl-5 space-y-2 text-foreground/90 leading-relaxed">
+    <ul className="list-disc marker:text-accent pl-5 space-y-2 font-display text-base md:text-lg text-muted-foreground leading-relaxed">
       {project.keyFeatures.map((feature) => (
         <li key={feature}>{feature}</li>
       ))}
@@ -136,10 +139,10 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 )}
 {project.awards && project.awards.length > 0 && (
   <div className="mb-6">
-    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+    <h3 className="text-xs font-medium text-accent uppercase tracking-[0.2em] mb-2">
       Honours & Awards
     </h3>
-    <ul className="list-disc pl-5 space-y-2 text-foreground/90 leading-relaxed">
+    <ul className="list-disc marker:text-accent pl-5 space-y-2 font-display text-base md:text-lg text-muted-foreground leading-relaxed">
       {project.awards.map((award) => (
         <li key={award}>{award}</li>
       ))}
@@ -148,14 +151,14 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
 )}
           {project.techStack && project.techStack.length > 0 && (
   <div className="mb-8">
-    <h3 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
+    <h3 className="text-xs font-medium text-accent uppercase tracking-[0.2em] mb-3">
       Tech Stack
     </h3>
     <div className="flex flex-wrap gap-2">
       {project.techStack.map((tech) => (
         <span
           key={tech}
-          className="px-3 py-1 text-sm bg-secondary rounded-md text-foreground/80"
+          className="px-3 py-1 text-sm rounded-full border border-border bg-foreground/[0.04] text-foreground/85"
         >
           {tech}
         </span>
@@ -171,7 +174,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold tracking-wide rounded-full hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
               >
                 GITHUB
                 <ExternalLink className="w-4 h-4" />
@@ -182,7 +185,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 border border-border text-foreground font-medium rounded-lg hover:bg-secondary transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 border border-border text-foreground text-sm font-semibold tracking-wide rounded-full hover:bg-foreground/[0.06] hover:-translate-y-0.5 transition-all duration-300"
               >
                 LIVE DEMO
                 <ExternalLink className="w-4 h-4" />
@@ -193,7 +196,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.companyWebsite}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold tracking-wide rounded-full hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
               >
                 LEARN MORE
                 <ExternalLink className="w-4 h-4" />
@@ -204,7 +207,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
                 href={project.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 bg-foreground text-background font-medium rounded-lg hover:bg-foreground/90 transition-colors"
+                className="flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground text-sm font-semibold tracking-wide rounded-full hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300"
               >
                 MY YOUTUBE CHANNEL! 
                 <ExternalLink className="w-4 h-4" />
