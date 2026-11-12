@@ -16,13 +16,10 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
         {projects.map((project, index) => (
-          <div
-            key={project.id}
-            className="animate-in fade-in slide-in-from-bottom-4"
-            style={{ animationDelay: `${index * 80}ms`, animationDuration: '400ms' }}
-          >
+          <div key={project.id}>
             <ProjectCard
               project={project}
+              index={index}
               onClick={() => setSelectedProject(project)}
             />
           </div>

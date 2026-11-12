@@ -15,21 +15,29 @@ const tabs = [
 
 export function TabsNav({ activeTab, onTabChange }: TabsNavProps) {
   return (
-    <nav className="flex items-center gap-1.5">
-      {tabs.map((tab) => (
-        <button
-          key={tab.id}
-          onClick={() => onTabChange(tab.id)}
-          className={cn(
-            "px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200",
-            activeTab === tab.id
-              ? "bg-foreground text-background"
-              : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-          )}
-        >
-          {tab.label}
-        </button>
-      ))}
+    <nav
+      role="tablist"
+      className="inline-flex items-center gap-1 p-1 rounded-full border border-border bg-foreground/[0.03] backdrop-blur-md self-start sm:self-auto"
+    >
+      {tabs.map((tab) => {
+        const active = activeTab === tab.id;
+        return (
+          <button
+            key={tab.id}
+            role="tab"
+            aria-selected={active}
+            onClick={() => onTabChange(tab.id)}
+            className={cn(
+              "px-5 py-2 font-display text-[15px] rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+              active
+                ? "bg-accent text-accent-foreground shadow-[0_4px_20px_-4px_var(--glow)]"
+                : "text-muted-foreground hover:text-foreground hover:bg-foreground/[0.05]"
+            )}
+          >
+            {tab.label}
+          </button>
+        );
+      })}
     </nav>
   );
 }

@@ -1,13 +1,19 @@
 "use client";
 
+import { SocialLinks } from "./social-links";
+
 export function Footer() {
   return (
-    <footer className="py-10 mt-4 border-t border-border/50">
-      <div className="text-center space-y-3">
-        
+    <footer className="mt-12 py-10 border-t border-border">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
+        <div className="text-center sm:text-left">
+        <p className="font-hand text-xl text-accent-soft -rotate-1 mb-1">thanks for stopping by!</p>
         <p className="text-sm text-muted-foreground">
-          Nidhi Subrahmanya ♡ 2026.    
+          <span className="font-serif italic text-foreground/90">Nidhi Subrahmanya</span>{" "}
+          <span className="text-accent">♡</span> 2026
         </p>
+        </div>
+        <SocialLinks size="sm" />
       </div>
     </footer>
   );

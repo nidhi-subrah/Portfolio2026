@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+
+// Lets every sticker report when its image is ready so the whole collage can appear at once.
+const StickerLoadContext = createContext<() => void>(() => {});
 import Image from "next/image";
 
 interface StickerProps {
@@ -11,8 +14,32 @@ interface StickerProps {
   size: "sm" | "md" | "lg" | "xl";
 }
 
+// Hover animation per sticker, keyed by image file so placement code stays untouched.
+// Animations run on an inner layer; the outer div keeps its exact position/rotation.
+const hoverAnim: Record<string, string> = {
+  "camera.png": "flash",
+  "headphones.png": "beat",
+  "cd.png": "spin",
+  "brain.png": "think",
+  "nidhi.png": "breathe",
+  "butterfly.png": "flutter",
+  "electric-guitar.png": "strum",
+  "dance.png": "twirl",
+  "cards.png": "flip",
+  "flower.png": "bloom",
+  "converse.png": "coin",
+  "8ball.png": "shake",
+  "skates1.png": "glide",
+  "paint.png": "hue",
+  "heart.png": "heartbeat",
+  "star.png": "twinkle",
+  "hopesdreams.png": "ransom",
+};
+
 function Sticker({ src, alt, className = "", style = {}, size }: StickerProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const onStickerLoad = useContext(StickerLoadContext);
+  const anim = hoverAnim[src.replace(/^\//, "")];
 
   const sizeClasses = {
     sm: "w-12 h-12 lg:w-14 lg:h-14",
@@ -33,20 +60,61 @@ function Sticker({ src, alt, className = "", style = {}, size }: StickerProps) {
         zIndex: isHovered ? 50 : (style.zIndex as number) || 1,
       }}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-contain"
-        sizes="(max-width: 768px) 100px, 150px"
-      />
+      <div
+        className={`sticker-anim ${anim ? `anim-${anim}` : ""} ${isHovered ? "is-hovered" : ""}`}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          draggable={false}
+          className="object-contain"
+          sizes="(max-width: 768px) 100px, 150px"
+          loading="eager"
+          onLoad={onStickerLoad}
+          onError={onStickerLoad}
+        />
+        {/* little extras that only exist for certain stickers */}
+        {anim === "flash" && <span aria-hidden className="camera-flash" />}
+        {anim === "beat" && (
+          <span aria-hidden className="music-notes">
+            <span>♪</span>
+            <span>♫</span>
+            <span>♪</span>
+          </span>
+        )}
+      </div>
     </div>
   );
 }
 
 export function FlatLay() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const loadedCount = useRef(0);
+  const [ready, setReady] = useState(false);
+
+  const handleStickerLoad = useCallback(() => {
+    loadedCount.current += 1;
+    const total = containerRef.current?.querySelectorAll("img").length ?? 0;
+    if (total > 0 && loadedCount.current >= total) setReady(true);
+  }, []);
+
+  // Safety net: never keep the collage hidden if an image is slow.
+  useEffect(() => {
+    const t = setTimeout(() => setReady(true), 2500);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
-    <div className="relative w-full h-full min-h-[300px] lg:min-h-[380px]">
+    <StickerLoadContext.Provider value={handleStickerLoad}>
+    <div
+      ref={containerRef}
+      className="relative w-full h-full min-h-[300px] lg:min-h-[380px] transition-[opacity,transform] duration-700 ease-out"
+      style={{
+        opacity: ready ? 1 : 0,
+        transform: ready ? "translateY(0) scale(1)" : "translateY(8px) scale(0.985)",
+      }}
+    >
       {/* Anchor stickers - larger, more prominent */}
 
       {/* Leica Camera - top left anchor */}
@@ -208,5 +276,6 @@ export function FlatLay() {
         style={{ transform: 'rotate(-10deg)', zIndex: 5 }}
       />
     </div>
+    </StickerLoadContext.Provider>
   );
 }
