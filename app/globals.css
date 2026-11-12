@@ -262,6 +262,37 @@
   50% { transform: scale(1.08); }
 }
 
+/* Section heading bar: its backdrop + hairline fade in when stuck (opacity only, no layout change).
+   Full-bleed via box-shadow + clip-path — shadows never create horizontal scroll. */
+.sticky-bar::before,
+.sticky-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  clip-path: inset(0 -100vmax);
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+.sticky-bar::before {
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: color-mix(in oklch, var(--background) 94%, transparent);
+  box-shadow: 0 0 0 100vmax color-mix(in oklch, var(--background) 94%, transparent);
+}
+.sticky-bar::after {
+  bottom: 0;
+  height: 1px;
+  background: var(--border);
+  box-shadow: 0 0 0 100vmax var(--border);
+}
+.sticky-bar[data-stuck="true"]::before,
+.sticky-bar[data-stuck="true"]::after {
+  opacity: 1;
+}
+
 /* Tab switch: one gentle fade for the whole grid */
 .tab-panel:not([hidden]) {
   animation: tab-fade 280ms ease-out;

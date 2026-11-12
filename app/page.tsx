@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from 'next/dynamic';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Hero } from "@/components/hero";
 import { ProjectGrid } from "@/components/project-grid";
 import { Footer } from "@/components/footer";
@@ -14,6 +14,18 @@ const TabsNav = dynamic(
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("work");
+
+  // The section heading bar sticks to the top once you scroll past it.
+  // A zero-height sentinel just above it tells us when it's "stuck".
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const [stuck, setStuck] = useState(false);
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setStuck(!entry.isIntersecting && entry.boundingClientRect.top < 0));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   // All tabs stay mounted (images stay decoded); switching only toggles visibility,
   // so there's no remount/reload flicker or layout jump.
@@ -34,11 +46,15 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-6 lg:px-12">
         <Hero />
 
-        <section className="pt-10 pb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+        {/* spacing between the intro and this section */}
+        <div className="pt-7 lg:pt-9" />
+        <div ref={sentinelRef} aria-hidden />
+        {/* Layout never changes between states (no flicker); only the backdrop fades in. */}
+        <section
+          data-stuck={stuck}
+          className="sticky-bar sticky top-0 z-40 py-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
+        >
           <div>
-            <p className="font-hand text-xl text-accent-soft mb-1 -rotate-2 origin-left">
-              a bit about my life
-            </p>
             <h2 className="relative inline-block font-serif italic text-3xl md:text-4xl text-foreground">
               Things I&apos;ve been up to
               <svg
@@ -56,14 +72,15 @@ export default function Home() {
                 />
               </svg>
             </h2>
-            <p className="font-hand text-xl text-muted-foreground mt-4 -rotate-1">
-              (tap any card for the full story ↓)
-            </p>
           </div>
           <TabsNav activeTab={activeTab} onTabChange={setActiveTab} />
         </section>
+        {/* hint sits below the sticky bar so it scrolls away normally */}
+        <p className="font-hand text-xl text-muted-foreground -mt-3 mb-16 -rotate-1">
+          (tap any card for the full story ↓)
+        </p>
 
-        <section className="pb-8">
+        <section className="pt-7 pb-8">
           {panels.map((panel) => (
             <div
               key={panel.id}

@@ -16,6 +16,8 @@ export interface Project {
   carouselImages?: string[];
   youtube?: string;
   awards?: string[];
+  /** Images shown under the overview text in the pop-up (e.g. certificates). */
+  attachments?: { src: string; alt: string; width: number; height: number; caption?: string }[];
 }
 
 export const workData: Project[] = [
@@ -35,7 +37,7 @@ export const workData: Project[] = [
   {
     id: "company-watai",
     title: "WAT.AI",
-    subtitle: "AI Software Engineer, Contract Part-time",
+    subtitle: "AI Software Engineer, Part-time",
     year: "Sep-Dec 2026",
     location: "Remote",
     tape: "yellow",
@@ -238,7 +240,7 @@ export const activitiesData: Project[] = [
   {
     id: "activity-2",
     title: "MENTORING",
-    subtitle: "Waterloo WiCs Technovation • Peer Tutor",
+    subtitle: "Waterloo WiCs Technovation • Mentor",
     year: "2020-Present",
     image: "/wics_uw_logo.png",
     carouselImages: [
@@ -246,6 +248,15 @@ export const activitiesData: Project[] = [
     "/Technovation-Girls-Canada.png",
   ],
     overview: " I’ve enjoyed mentoring students in math and science since freshman year of high school, helping them turn confusion into confidence! Now, through the University of Waterloo Women in Computer Science (WiCS) Technovation Girls program, I support teams in building thoughtful, polished technical projects from idea to execution.",
+    attachments: [
+      {
+        src: "/Technovation_Semifinalist_Certificate.png",
+        alt: "Technovation 2026 Semifinalist Certificate of Recognition awarded to Nidhi Subrahmanya as a mentor",
+        width: 1600,
+        height: 1236,
+        caption: "Certificate of Recognition for mentoring one of my teams to the Semifinals of the 2026 Technovation season.",
+      },
+    ],
     techStack: [],
     companyWebsite: "https://uwaterloo.ca/women-in-computer-science/youth-programs/technovation",
   },

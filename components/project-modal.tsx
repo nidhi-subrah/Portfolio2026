@@ -123,6 +123,27 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               className="font-display text-base md:text-lg text-muted-foreground leading-relaxed whitespace-pre-line"
               dangerouslySetInnerHTML={{ __html: project.overview }}
             />
+            {project.attachments?.map((a) => (
+              <figure key={a.src} className="mt-5">
+              {/* white backing: the certificate has a transparent background */}
+              <div className="overflow-hidden rounded-xl bg-white ring-1 ring-border shadow-lg">
+                <Image
+                  src={a.src}
+                  alt={a.alt}
+                  width={a.width}
+                  height={a.height}
+                  draggable={false}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 608px"
+                />
+              </div>
+              {a.caption && (
+                <figcaption className="mt-3 font-display italic text-sm md:text-base text-muted-foreground">
+                  {a.caption}
+                </figcaption>
+              )}
+              </figure>
+            ))}
           </div>
           {/* Features */}
 {project.keyFeatures && project.keyFeatures.length > 0 && (
