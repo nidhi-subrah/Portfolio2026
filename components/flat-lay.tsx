@@ -99,10 +99,10 @@ export function FlatLay() {
     if (total > 0 && loadedCount.current >= total) setReady(true);
   }, []);
 
-  // Safety net: never keep the collage hidden if an image is slow.
+  // Start the existing fade-in as soon as the page mounts, in step with the intro text,
+  // instead of waiting for every sticker image to finish loading.
   useEffect(() => {
-    const t = setTimeout(() => setReady(true), 2500);
-    return () => clearTimeout(t);
+    setReady(true);
   }, []);
 
   return (

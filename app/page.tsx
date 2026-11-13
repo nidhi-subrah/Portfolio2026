@@ -1,16 +1,11 @@
 "use client";
 
-import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from "react";
 import { Hero } from "@/components/hero";
+import { TabsNav } from "@/components/tabs-nav";
 import { ProjectGrid } from "@/components/project-grid";
 import { Footer } from "@/components/footer";
 import { workData, projectsData, activitiesData } from "@/lib/data";
-
-const TabsNav = dynamic(
-  () => import('@/components/tabs-nav').then((mod) => mod.TabsNav),
-  { ssr: false }
-);
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("work");
@@ -52,7 +47,7 @@ export default function Home() {
         {/* Layout never changes between states (no flicker); only the backdrop fades in. */}
         <section
           data-stuck={stuck}
-          className="sticky-bar sticky top-0 z-40 py-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
+          className="group sticky-bar sticky top-0 z-40 py-5 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6"
         >
           <div>
             <h2 className="relative inline-block font-serif italic text-3xl md:text-4xl text-foreground">
@@ -73,7 +68,9 @@ export default function Home() {
               </svg>
             </h2>
           </div>
-          <TabsNav activeTab={activeTab} onTabChange={setActiveTab} />
+          <div className="sm:translate-y-4 group-data-[stuck=true]:sm:translate-y-0 transition-transform duration-250">
+            <TabsNav activeTab={activeTab} onTabChange={setActiveTab} />
+          </div>
         </section>
         {/* hint sits below the sticky bar so it scrolls away normally */}
         <p className="font-hand text-xl text-muted-foreground -mt-3 mb-16 -rotate-1">

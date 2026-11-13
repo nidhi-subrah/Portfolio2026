@@ -33,6 +33,7 @@ export const workData: Project[] = [
 
   •  Built a <strong>two-stage pre-enrollment questionnaire</strong> across shopping and checkout, implementing eligibility logic, dependent-specific workflows, validation and per-enrollment data persistence.`,
     techStack: ["PHP", "Laravel", "React Native", "MySQL", "Docker", "AWS", "Figma", "MUI"],
+    companyWebsite: "https://www.becvrd.com/",
   },
   {
     id: "company-watai",
@@ -46,12 +47,14 @@ export const workData: Project[] = [
 
   •  Architected database schemas and ML integration workflows for vocabulary, speech recognition and pronunciation assessment to support <strong>Rohingya newcomers</strong>.`,
     techStack: ["Python", "SQL", "FastAPI", "React.js", "PyTorch", "Hugging Face Transformers", "REST APIs", "AWS", "DynamoDB", "S3", "Speech Recognition", "ML Integration"],
+    companyWebsite: "https://watai.ca/",
   },
   {
     id: "company-1",
     title: "VIRTEK VISION INTERNATIONAL INC.",
     subtitle: "Full-Stack Software Developer Intern",
     year: "Jan-Apr 2026",
+    location: "Waterloo, ON",
     image: "/Virtek_Vision.jpeg",
     overview: `Built responsive React and TypeScript features for web app and mobile interfaces integrated with a laser-projection system, enabling FOD capture, inspection workflows and real-time desktop-to-web synchronization.
 
@@ -71,6 +74,7 @@ export const workData: Project[] = [
   tape: "yellow",
   subtitle: "Software Developer, Part-time",
   year: "Dec-Apr 2026",
+  location: "Waterloo, ON",
   image: "/Waterloo_Reality_Labs.gif",
   overview: `Contributed as part of the <em>software team</em> for <strong>Universal Gestures</strong>, a project focused on building a Unity package for Meta Quest headsets that enhances hand-tracking gesture recognition for mixed reality applications. My contributions include:
 
@@ -88,6 +92,7 @@ export const workData: Project[] = [
     tape: "red",
     subtitle: "AI & Data Analytics Intern",
     year: "May-Aug 2025",
+    location: "Mississauga, ON",
     image: "/Gay_Lea.png",
     overview: `•  Automated pricing approval workflows with Power Automate, reducing manual validation by <strong>60%</strong> and shortening approval turnaround from days to hours.
 
